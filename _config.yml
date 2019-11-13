@@ -15,12 +15,12 @@ remote_theme           : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en-US"
-title                    : "Site Title"
+locale                   : "ko-KR"
+title                    : "boco boko의 블로그입니다."
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "bocopile"
-description              : "An amazing website."
+description              : "해당 블로그입니다."
 url                      : "https://bocopile.github.io" # the base hostname & protocol for your site e.g. "https://bocopile.github.io"
 baseurl                  : ""# the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
