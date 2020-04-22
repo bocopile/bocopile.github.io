@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="웹프론트엔드, 자바스크립트, 웹퍼블리셔, 블로그">
-    <meta name="description" content="HOTDARI BLOG">
+    <meta name="keywords" content="Tag: javascript, 웹프론트엔드, 자바스크립트, 웹퍼블리셔, 블로그">
+    <meta name="description" content="Tag: javascript | HOTDARI BLOG">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>HOTDARI BLOG</title>
+    <title>Tag: javascript | HOTDARI BLOG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -171,66 +171,9 @@
 
 </header>
 
-    
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
-        cursor: pointer;
-        z-index: 100;
-    }
-
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
-
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color:rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
-    
-    html, body {
-        height:100%;
-    }
-
-    #page {
-        height:100%;
-        min-height: 100%;
-        width:100%;
-    }
-</style>
-
-
-<div class="index-cover-wrap">
-    <div id="page" class="carousel carousel-slider center index-cover" data-indicators="true">
-        
-
-        <div class="carousel-item red white-text bg-cover about-cover">
-            <div class="container" style="right: 0px;left: 0px;">
-                <div class="row">
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
@@ -265,277 +208,88 @@
 </script>
 
 
-
-                <div class="cover-btns">
-                    <a href="#indexCard" class="waves-effect waves-light btn">
-                        <i class="fa fa-angle-double-down"></i>Start
-                    </a>
-                </div>
-                <div class="cover-social-link">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>
 </div>
+
+<main class="content">
+
+    
+
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fa fa-tags"></i>&nbsp;&nbsp;Post Tags
             </div>
-        </div>
-
-        
-    </div>
-</div>
-<script>
-$(function () {
-    let coverSlider = $('.carousel');
-    coverSlider.carousel({
-        duration: Number('120'),
-        fullWidth: true,
-        indicators: 'true' === 'true'
-    });
-
-    let carouselIntervalId;
-    
-    // Loop to call the next cover article picture.
-    let autoCarousel = function() {
-        carouselIntervalId = setInterval(function () {
-            coverSlider.carousel('next');
-        }, 5000);
-    };
-    autoCarousel();
-    
-
-    let restartPlay = function () {
-        
-        clearInterval(carouselIntervalId);
-        autoCarousel();
-        
-    };
-
-    
-    // prev and next cover post.
-    $('#prev-cover').click(function () {
-        coverSlider.carousel('prev');
-        restartPlay();
-    });
-    $('#next-cover').click(function () {
-        coverSlider.carousel('next');
-        restartPlay();
-    });
-    
-});
-</script>
-
-
-
-<main id="indexCard" class="content">
-
-    
-     <!-- <div id="indexCard" class="index-card">
-        <div class="container ">
-           <div class="card">
-                <div class="card-content">
-                    
-                        <div class="dream">
-    
-    <div class="title center-align">
-        <i class="fa fa-lightbulb-o"></i>&nbsp;&nbsp;我的梦想
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
+            <div class="tag-chips">
+                
+                
+                <a href="/tags/http/" title="http: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="http" style="background-color: #F9EBEA;">http
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/cors/" title="cors: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="cors" style="background-color: #F5EEF8;">cors
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/css/" title="css: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="css" style="background-color: #D5F5E3;">css
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/css3/" title="css3: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="css3" style="background-color: #E8F8F5;">css3
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/javascript/" title="javascript: 5">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="javascript" style="background-color: #FEF9E7;">javascript
+                        <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+            </div>
         </div>
     </div>
 </div>
-                    
-
-                    
-
-                    
-
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    
 
     
 
-    <!-- 所有文章卡片 -->
-    <!-- <article id="articles" class="container articles"> -->
-    <article class="container articles">
-        <div class="row article-row">
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/04/16/cors/">
-                        <div class="card-image">
-                            
-                            <img src="/medias/banner/cors_cover.png" class="responsive-img" alt="Cross-Origin Resource Sharing">
-                            
-                            <span class="card-title">Cross-Origin Resource Sharing</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                손들어 움직이면 쏜다!
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-16
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-user fa-fw"></i>
-                                HOTDARI
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/http/">
-                            <span class="chip bg-color">http</span>
-                        </a>
-                        
-                        <a href="/tags/cors/">
-                            <span class="chip bg-color">cors</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/01/19/flex-jasigyoso/">
-                        <div class="card-image">
-                            
-                            <img src="/medias/banner/css3_cover.png" class="responsive-img" alt="CSS3 Flex Layout - 자식요소">
-                            
-                            <span class="card-title">CSS3 Flex Layout - 자식요소</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Flex했지뭐야~
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-19
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-user fa-fw"></i>
-                                HOTDARI
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/css/">
-                            <span class="chip bg-color">css</span>
-                        </a>
-                        
-                        <a href="/tags/css3/">
-                            <span class="chip bg-color">css3</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/01/05/flex-bumoyoso/">
-                        <div class="card-image">
-                            
-                            <img src="/medias/banner/css3_cover.png" class="responsive-img" alt="CSS3 Flex Layout - 부모요소">
-                            
-                            <span class="card-title">CSS3 Flex Layout - 부모요소</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Flex했지뭐야~
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-05
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-user fa-fw"></i>
-                                HOTDARI
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/css/">
-                            <span class="chip bg-color">css</span>
-                        </a>
-                        
-                        <a href="/tags/css3/">
-                            <span class="chip bg-color">css3</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4" data-tags="javascript" data-aos="fade-up">
                 <div class="card">
                     <a href="/2020/01/02/peurototaib/">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             <img src="/medias/banner/javascript_cover.png" class="responsive-img" alt="프로토타입">
                             
                             <span class="card-title">프로토타입</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                처음 본 너의 모습
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-02
@@ -548,36 +302,21 @@ $(function () {
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/javascript/">
-                            <span class="chip bg-color">javascript</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="javascript" data-aos="fade-up">
                 <div class="card">
                     <a href="/2019/12/26/gaegcewa-saengseongja/">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             <img src="/medias/banner/javascript_cover.png" class="responsive-img" alt="객체와 생성자">
                             
                             <span class="card-title">객체와 생성자</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                어떻게 객체를 생성할까?
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-26
@@ -590,36 +329,21 @@ $(function () {
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/javascript/">
-                            <span class="chip bg-color">javascript</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="javascript" data-aos="fade-up">
                 <div class="card">
                     <a href="/2019/11/24/seukopeuceingwa-keulrojeo/">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             <img src="/medias/banner/javascript_cover.png" class="responsive-img" alt="스코프체인과 클로저">
                             
                             <span class="card-title">스코프체인과 클로저</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                UFO처럼 알기 힘든 존재
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-24
@@ -632,36 +356,21 @@ $(function () {
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/javascript/">
-                            <span class="chip bg-color">javascript</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="javascript" data-aos="fade-up">
                 <div class="card">
                     <a href="/2019/10/17/hamsuwa-hoiseuting/">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             <img src="/medias/banner/javascript_cover.png" class="responsive-img" alt="함수와 호이스팅">
                             
                             <span class="card-title">함수와 호이스팅</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                그의 이름을 불러주기 전에는 그는 다만 하나의 코드에 지나지 않았다.
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-17
@@ -674,36 +383,21 @@ $(function () {
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/javascript/">
-                            <span class="chip bg-color">javascript</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="javascript" data-aos="fade-up">
                 <div class="card">
                     <a href="/2019/10/03/byeonsuwa-seukopeu/">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             <img src="/medias/banner/javascript_cover.png" class="responsive-img" alt="변수와 스코프">
                             
                             <span class="card-title">변수와 스코프</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                불러도 대답없는 너란 변수
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-03
@@ -716,22 +410,11 @@ $(function () {
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/javascript/">
-                            <span class="chip bg-color">javascript</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
             
         </div>
     </article>
-
 </main>
 
 

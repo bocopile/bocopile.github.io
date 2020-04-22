@@ -1,0 +1,752 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="CSS3 Flex Layout - 자식요소, 웹프론트엔드, 자바스크립트, 웹퍼블리셔, 블로그">
+    <meta name="description" content="CSS3 Flex Layout - 자식요소이전에 올린 포스트에서는 부모요소에 대해서 알아보았다.이번 포스트에서는 자식요소에 대해서 알아보려 한다.
+##자식요소(item) 속성 살펴보기
+Order부모요소안의 자식요소들">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>CSS3 Flex Layout - 자식요소 | HOTDARI BLOG</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="HOTDARI BLOG">
+                    
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/" class="waves-effect waves-light">
+						
+						<i class="fa fa-home"></i>
+						
+						<span>HOME</span>
+					</a>
+          
+        </li>
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/tags" class="waves-effect waves-light">
+						
+						<i class="fa fa-tags"></i>
+						
+						<span>Tags</span>
+					</a>
+          
+        </li>
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/archives" class="waves-effect waves-light">
+						
+						<i class="fa fa-archive"></i>
+						
+						<span>ARCHIVES</span>
+					</a>
+          
+        </li>
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/about" class="waves-effect waves-light">
+						
+						<i class="fa fa-user-circle-o"></i>
+						
+						<span>ABOUT</span>
+					</a>
+          
+        </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/favicon.png" class="logo-img responsive-img">
+        
+        <div class="logo-name">HOTDARI BLOG</div>
+        <div class="logo-desc">
+            
+            웹프론트엔드 엔지니어가 되기 위한 Study Blog
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+<li class="m-nav-item">
+			
+				<a href="/" class="waves-effect waves-light">
+					
+					<i class="fa fa-fw fa-home"></i>
+					
+					HOME
+				</a>
+          
+        </li>
+        
+<li class="m-nav-item">
+			
+				<a href="/tags" class="waves-effect waves-light">
+					
+					<i class="fa fa-fw fa-tags"></i>
+					
+					Tags
+				</a>
+          
+        </li>
+        
+<li class="m-nav-item">
+			
+				<a href="/archives" class="waves-effect waves-light">
+					
+					<i class="fa fa-fw fa-archive"></i>
+					
+					ARCHIVES
+				</a>
+          
+        </li>
+        
+<li class="m-nav-item">
+			
+				<a href="/about" class="waves-effect waves-light">
+					
+					<i class="fa fa-fw fa-user-circle-o"></i>
+					
+					ABOUT
+				</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/banner/css3_cover.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        CSS3 Flex Layout - 자식요소
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/css/">
+                                <span class="chip bg-color">css</span>
+                            </a>
+                        
+                            <a href="/tags/css3/">
+                                <span class="chip bg-color">css3</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2020-01-19
+                </div>
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="CSS3-Flex-Layout-자식요소"><a href="#CSS3-Flex-Layout-자식요소" class="headerlink" title="CSS3 Flex Layout - 자식요소"></a>CSS3 Flex Layout - 자식요소</h1><p>이전에 올린 포스트에서는 부모요소에 대해서 알아보았다.<br>이번 포스트에서는 자식요소에 대해서 알아보려 한다.</p>
+<p>##자식요소(item) 속성 살펴보기</p>
+<h3 id="Order"><a href="#Order" class="headerlink" title="Order"></a>Order</h3><p>부모요소안의 자식요소들의 순서를 말하며 …,-3,-2,-1,0,1,2,3,….<br>이렇게 숫자로 순서를 줄 수 있다.<br>기본값은 0이고 음수도 양수도 둘다 허용한다.<br>html구조를 바꾸는 것이 아닌 html구조는 그대로이며 보이는 순서만 바뀐 것이다.</p>
+<iframe height="350" style="width: 100%;" scrolling="no" title="JjomZgx" src="https://codepen.io/hotdari/embed/JjomZgx?height=265&amp;theme-id=dark&amp;default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/hotdari/pen/JjomZgx" target="_blank" rel="noopener">JjomZgx</a> by hotdari
+  (<a href="https://codepen.io/hotdari" target="_blank" rel="noopener">@hotdari</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.
+</iframe>
+
+<h3 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h3><p>자식요소의 너비증가비율을 나타낸다.<br>픽셀단위가 아닌 비율단위로 너비를 변경해준다.<br>기본값은 0이다. 속성은 50%이렇게가 아닌 1,2,3 이런 숫자로 나타낸다.<br>자식요소들의 flex-grow의 수치를 다 더해서 전체 너비비율의 총합을 알아내고<br>각 자식요소의 비율 / 너비비율 총합으로 계산해서 너비비율을 정한다.</p>
+<iframe height="350" style="width: 100%;" scrolling="no" title="GRgYBoZ" src="https://codepen.io/hotdari/embed/GRgYBoZ?height=265&amp;theme-id=dark&amp;default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/hotdari/pen/GRgYBoZ" target="_blank" rel="noopener">GRgYBoZ</a> by hotdari
+  (<a href="https://codepen.io/hotdari" target="_blank" rel="noopener">@hotdari</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.
+</iframe>
+
+<h3 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a>flex-shrink</h3><p>자식요소의 너비감소비율을 나타낸다.<br>픽셀이나 고정적인 수치를 주면 작동하지 않는다.<br>기본값은 1이다.<br>아래의 Codepen에서는 고정너비를 줄 수 없어서 미리 flex-basis를 가져다 썼다.</p>
+<iframe height="350" style="width: 100%;" scrolling="no" title="jOEepyZ" src="https://codepen.io/hotdari/embed/jOEepyZ?height=265&amp;theme-id=dark&amp;default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/hotdari/pen/jOEepyZ" target="_blank" rel="noopener">jOEepyZ</a> by hotdari
+  (<a href="https://codepen.io/hotdari" target="_blank" rel="noopener">@hotdari</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.
+</iframe>
+
+<p>100px을 감소시켰지만 같은 크기이지만 감소비율이 다르기에 감소되는 수치도 다르다.<br>감소비율에 대한 계산식은<br>첫번째 item은 flex-basis(200px) - ( 감소된수치 100px * 3/2 )<br>두번째는 200px - (100px*3/1)이다. 이렇기 때문에 감소할때 너비가 다르게 적용된다.</p>
+<h3 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h3><p>자식요소의 공간의 기본너비를 지정한다.<br>단위를 포함할 수 있으며 기본값은 auto이다.<br>실제로 flex layout을 기반으로 스타일을 구사하면 width가 아닌 basis를 쓰게 되는데.<br>width가 없는 경우에는 flex-grow가 생각보다 다르게 먹힌다.<br>아래의 코드를 참고하면 이해가 쉬울 것이다.</p>
+<iframe height="350" style="width: 100%;" scrolling="no" title="LYEgBzY" src="https://codepen.io/hotdari/embed/LYEgBzY?height=265&amp;theme-id=dark&amp;default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/hotdari/pen/LYEgBzY" target="_blank" rel="noopener">LYEgBzY</a> by hotdari
+  (<a href="https://codepen.io/hotdari" target="_blank" rel="noopener">@hotdari</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.
+</iframe>
+
+<p>width 유무에 따라서 같은 비율의 flex-grow인데 다르게 나온다.<br>쉽게 말하자면 width나 flex-basis가 없다면 내부 콘텐츠의 너비를 기준으로 flex-grow 수치가 붙으며 width, flex-basis가 있다면 너비기준으로 flex-grow수치가 붙는다.</p>
+<h3 id="flex-단축속성"><a href="#flex-단축속성" class="headerlink" title="flex 단축속성"></a>flex 단축속성</h3><p>부모요소에서는 <code>flex-flow</code> 가 단축속성이였다면<br>자식요소에서는 <code>flex</code> 가 단축속성이다.</p>
+<pre class=" language-css"><code class="language-css"><span class="token selector">item</span><span class="token punctuation">{</span><span class="token property">flex</span><span class="token punctuation">:</span><span class="token number">1</span> <span class="token number">1</span> <span class="token number">200</span>px <span class="token comment" spellcheck="true">/* 증가너비(grow) 감소너비(shrink) 기본너비(basis) */</span><span class="token punctuation">}</span>
+<span class="token selector">item</span><span class="token punctuation">{</span><span class="token property">flex</span><span class="token punctuation">:</span><span class="token number">1</span> <span class="token number">20</span>px <span class="token comment" spellcheck="true">/* 증가너비 감소너비이지만 단위가 붙으면 기본너비 */</span><span class="token punctuation">}</span></code></pre>
+<h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>교차축(cross-axis)에서 자식요소의 정렬방법을 설정한다.<br>부모요소의 <code>align-items</code> 로 자식요소를 정렬하지만 그 이후에 자식요소 중 어느 한부분만 재정렬 하고 싶을 때 쓰인다.</p>
+<table>
+<thead>
+<tr>
+<th>값</th>
+<th>내용</th>
+<th>기본값</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>auto</td>
+<td>부모요소의 align-items의 속성을 상속받음</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>stretch</td>
+<td>자식요소의 교차축을 채우기위해 늘림</td>
+<td></td>
+</tr>
+<tr>
+<td>flex-start</td>
+<td>교차축의 시작점으로 정렬</td>
+<td></td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>교차축의 마지막점으로 정렬</td>
+<td></td>
+</tr>
+<tr>
+<td>center</td>
+<td>교차축의 중앙으로 정렬</td>
+<td></td>
+</tr>
+<tr>
+<td>baseline</td>
+<td>문자 기준선으로 정렬</td>
+<td></td>
+</tr>
+</tbody></table>
+<iframe height="265" style="width: 100%;" scrolling="no" title="VwYEBGj" src="https://codepen.io/hotdari/embed/VwYEBGj?height=265&amp;theme-id=dark&amp;default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/hotdari/pen/VwYEBGj" target="_blank" rel="noopener">VwYEBGj</a> by hotdari
+  (<a href="https://codepen.io/hotdari" target="_blank" rel="noopener">@hotdari</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.
+</iframe>
+
+<h2 id="뒷이야기"><a href="#뒷이야기" class="headerlink" title="뒷이야기"></a>뒷이야기</h2><p>여러 디바이스가 나오면서 개발부분에서 변화만 일어난 것이 아니고 퍼블리셔영역에서도 변화가 일어나고 바뀐걸 볼 수가 있었다.<br>table로 html소스를 배치하던 때 block 단위의 박스형태로 디자인하면서 여러 사람들이 힘겨워했다.<br>이 포스트를 읽고 이제 박스형태에서 flex형태로 변하는 시점에서 유연하게 적응하길 바란다.</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <!-- <hr/> -->
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share" style="display:none">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2020/04/16/cors/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/banner/cors_cover.png" class="responsive-img" alt="Cross-Origin Resource Sharing">
+                        
+                        <span class="card-title">Cross-Origin Resource Sharing</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            손들어 움직이면 쏜다!
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            HOTDARI
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/http/">
+                        <span class="chip bg-color">http</span>
+                    </a>
+                    
+                    <a href="/tags/cors/">
+                        <span class="chip bg-color">cors</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/01/05/flex-bumoyoso/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/banner/css3_cover.png" class="responsive-img" alt="CSS3 Flex Layout - 부모요소">
+                        
+                        <span class="card-title">CSS3 Flex Layout - 부모요소</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Flex했지뭐야~
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            HOTDARI
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/css/">
+                        <span class="chip bg-color">css</span>
+                    </a>
+                    
+                    <a href="/tags/css3/">
+                        <span class="chip bg-color">css3</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer">
+        <div class="container row center-align">
+            <div class="col s12 m12 l12 copy-right">
+                &copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>
+                <a href="https://hexo.io/" target="_blank">Hexo</a>
+                <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>
+            </div>
+            <!-- <div class="col s12 m4 l4 social-link">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div> -->
+        </div>
+    </footer>
+    
+    <div class="progress-bar"></div>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Z90Z3NYEY"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-3Z90Z3NYEY');
+</script>
+
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+</body>
+
+</html>

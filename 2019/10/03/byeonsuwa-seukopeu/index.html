@@ -1,0 +1,860 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="변수와 스코프, 웹프론트엔드, 자바스크립트, 웹퍼블리셔, 블로그">
+    <meta name="description" content="변수와 스코프변수(variable)
+데이터를 저장하는 공간
+문자열, 숫자, 배열, boolean 등을 넣고 불러서 쓸 수 있다.
+
+변수 쓰는 방법var a = &#39;변수입니다.&#39;; 문자열
+var b = 1; 숫자변수
+v">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>변수와 스코프 | HOTDARI BLOG</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="HOTDARI BLOG">
+                    
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/" class="waves-effect waves-light">
+						
+						<i class="fa fa-home"></i>
+						
+						<span>HOME</span>
+					</a>
+          
+        </li>
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/tags" class="waves-effect waves-light">
+						
+						<i class="fa fa-tags"></i>
+						
+						<span>Tags</span>
+					</a>
+          
+        </li>
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/archives" class="waves-effect waves-light">
+						
+						<i class="fa fa-archive"></i>
+						
+						<span>ARCHIVES</span>
+					</a>
+          
+        </li>
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/about" class="waves-effect waves-light">
+						
+						<i class="fa fa-user-circle-o"></i>
+						
+						<span>ABOUT</span>
+					</a>
+          
+        </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/favicon.png" class="logo-img responsive-img">
+        
+        <div class="logo-name">HOTDARI BLOG</div>
+        <div class="logo-desc">
+            
+            웹프론트엔드 엔지니어가 되기 위한 Study Blog
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+<li class="m-nav-item">
+			
+				<a href="/" class="waves-effect waves-light">
+					
+					<i class="fa fa-fw fa-home"></i>
+					
+					HOME
+				</a>
+          
+        </li>
+        
+<li class="m-nav-item">
+			
+				<a href="/tags" class="waves-effect waves-light">
+					
+					<i class="fa fa-fw fa-tags"></i>
+					
+					Tags
+				</a>
+          
+        </li>
+        
+<li class="m-nav-item">
+			
+				<a href="/archives" class="waves-effect waves-light">
+					
+					<i class="fa fa-fw fa-archive"></i>
+					
+					ARCHIVES
+				</a>
+          
+        </li>
+        
+<li class="m-nav-item">
+			
+				<a href="/about" class="waves-effect waves-light">
+					
+					<i class="fa fa-fw fa-user-circle-o"></i>
+					
+					ABOUT
+				</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/banner/javascript_cover.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        변수와 스코프
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/javascript/">
+                                <span class="chip bg-color">javascript</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2019-10-03
+                </div>
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="변수와-스코프"><a href="#변수와-스코프" class="headerlink" title="변수와 스코프"></a>변수와 스코프</h1><h2 id="변수-variable"><a href="#변수-variable" class="headerlink" title="변수(variable)"></a>변수(variable)</h2><ul>
+<li>데이터를 저장하는 공간</li>
+<li>문자열, 숫자, 배열, boolean 등을 넣고 불러서 쓸 수 있다.</li>
+</ul>
+<h2 id="변수-쓰는-방법"><a href="#변수-쓰는-방법" class="headerlink" title="변수 쓰는 방법"></a>변수 쓰는 방법</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">'변수입니다.'</span><span class="token punctuation">;</span> 문자열
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> 숫자변수
+<span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'H'</span><span class="token punctuation">,</span><span class="token string">'G'</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//배열</span>
+<span class="token keyword">var</span> d <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token comment" spellcheck="true">// boolean 형태</span></code></pre>
+<ol>
+<li><code>var</code>를 쓴 후 변수명을 쓴다.</li>
+<li>그리고 변수에 담을 내용을 넣는다.</li>
+</ol>
+<h2 id="var의-문제점"><a href="#var의-문제점" class="headerlink" title="var의 문제점"></a>var의 문제점</h2><h3 id="재선언의-문제"><a href="#재선언의-문제" class="headerlink" title="재선언의 문제"></a>재선언의 문제</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">'안녕하세요.'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'a 변수 :'</span> <span class="token operator">+</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">'감사합니다.'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'a 변수 :'</span> <span class="token operator">+</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<ul>
+<li>위와 같이 안녕하세요를 쓴 변수 a가 마지막에는 감사합니다로 변한다.</li>
+<li>협업을 하게되면 누군가의 변수를 건드릴 수 있다.</li>
+</ul>
+<h3 id="Hoisting-문제"><a href="#Hoisting-문제" class="headerlink" title="Hoisting 문제"></a>Hoisting 문제</h3><p>Hoisting : 해당 변수가 속한 범위(Scope) 최상단으로 올리는 현상</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">'안녕하세요.'</span>
+<span class="token keyword">function</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">'감사합니다.'</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<h4 id="실행결과"><a href="#실행결과" class="headerlink" title="실행결과"></a>실행결과</h4><pre class=" language-javascript"><code class="language-javascript">undefined
+감사합니다<span class="token punctuation">.</span></code></pre>
+<ul>
+<li>‘안녕하세요.’ 그 다음 ‘감사합니다.’ 가 뜰 줄 알았지만 undefined가 뜨고 ‘감사합니다.’가 떠버렸다.</li>
+<li>Hoisting 때문에 ‘안녕하세요.’가 뜨지 않고 func()안의 <code>console.log(a)</code>가 값이 없는 <code>var a</code>로 인식하여 undefined가 떠버린다.</li>
+</ul>
+<h4 id="실행결과에-따른-실험"><a href="#실행결과에-따른-실험" class="headerlink" title="실행결과에 따른 실험"></a>실행결과에 따른 실험</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">'안녕하세요.'</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">'감사합니다.'</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<ul>
+<li>위의 실험결과에 따라 그러면 왜 var a가 ‘안녕하세요.’가 뜨기 위해서는 함수안에 선언해줘야 하는 모습을 보여주고있다.</li>
+</ul>
+<h4 id="실행결과-1"><a href="#실행결과-1" class="headerlink" title="실행결과"></a>실행결과</h4><pre class=" language-javascript"><code class="language-javascript">안녕하세요<span class="token punctuation">.</span>
+감사합니다<span class="token punctuation">.</span></code></pre>
+<h3 id="var를-안써도-기본값으로-잡혀-버리는-문제"><a href="#var를-안써도-기본값으로-잡혀-버리는-문제" class="headerlink" title="var를 안써도 기본값으로 잡혀 버리는 문제"></a>var를 안써도 기본값으로 잡혀 버리는 문제</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">for</span><span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<ul>
+<li>위의 코드가 작동하지 않을 것 같지만 아주 잘작동하는 모습을 보여준다.</li>
+</ul>
+<h4 id="실행결과-2"><a href="#실행결과-2" class="headerlink" title="실행결과"></a>실행결과</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token number">0</span>
+<span class="token number">1</span>
+<span class="token number">2</span></code></pre>
+<ul>
+<li>기본적으로 var는 선언을 안해줘도 선언이 되어져버린다.</li>
+<li>그래서 코드가 실행되지 않는 것이 아닌 암묵적으로 아래와 같은 형태로 변한다.</li>
+</ul>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> i<span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<ul>
+<li>문제점이라고 하기보다는 불편한점이 생겼고 이로 인해서 새로운 변수가 생겼다.</li>
+<li>ES6에서는 <code>let</code>과 <code>const</code>가 새로 생겼으며 둘마다 특징이 있다.</li>
+</ul>
+<h2 id="var-let-const변수"><a href="#var-let-const변수" class="headerlink" title="var, let, const변수"></a>var, let, const변수</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>var</th>
+<th>let</th>
+<th>const</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>선언,할당</td>
+<td>변수 재선언, 변수 재할당 가능</td>
+<td>변수 재선언 불가능, 변수 재할당 가능</td>
+<td>변수 재선언 불가능, 변수 재할당 불가능</td>
+</tr>
+<tr>
+<td>버전</td>
+<td>ES5</td>
+<td>ES6</td>
+<td>ES6</td>
+</tr>
+<tr>
+<td>범위</td>
+<td>Function-scoped</td>
+<td>Block-scoped</td>
+<td>Block-scoped</td>
+</tr>
+<tr>
+<td>Hoisting</td>
+<td>Hoisting가능</td>
+<td>Hoisting 가능<br>( block 단위)</td>
+<td>Hoisting 가능<br>( block 단위)</td>
+</tr>
+</tbody></table>
+<ul>
+<li><code>let</code>과 <code>const</code>는 재선언이 불가능 하여 같은 범위안에서는 중복하여 다른 사람이 쓰더라도 데이터가 변할 경우가 사라졌다.</li>
+<li><code>const</code>같은 경우 절대값, 상수를 쓰기위해서 재선언, 재할당이 불가능하다.</li>
+<li><code>let</code> : 같은 범위에서는 재선언 불가능, 재할당은 가능</li>
+<li><code>const</code> : 절대값(값 변함X) 역할, 재선언 불가능, 재할당 불가능</li>
+</ul>
+<h3 id="재선언의-문제-해결"><a href="#재선언의-문제-해결" class="headerlink" title="재선언의 문제 해결"></a>재선언의 문제 해결</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token string">'안녕하세요.'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'a 변수 :'</span> <span class="token operator">+</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token string">'감사합니다.'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'a 변수 :'</span> <span class="token operator">+</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> b <span class="token operator">=</span> <span class="token string">'안녕하세요.'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'b 변수 :'</span> <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> b <span class="token operator">=</span> <span class="token string">'감사합니다.'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'b 변수 :'</span> <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="실행결과-3"><a href="#실행결과-3" class="headerlink" title="실행결과"></a>실행결과</h4><pre class=" language-javascript"><code class="language-javascript">Uncaught SyntaxError<span class="token punctuation">:</span> Identifier <span class="token string">'a'</span> has already been declared
+Uncaught SyntaxError<span class="token punctuation">:</span> Identifier <span class="token string">'b'</span> has already been declared</code></pre>
+<h3 id="Hoisting-문제-해결"><a href="#Hoisting-문제-해결" class="headerlink" title="Hoisting 문제 해결"></a>Hoisting 문제 해결</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token string">'안녕하세요.'</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  a <span class="token operator">=</span> <span class="token string">'감사합니다.'</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<ul>
+<li><code>let</code>은 재선언이 불가능 하기에 함수안의 let은 재할당으로 들어간다.</li>
+<li><code>const</code>같은 경우는 값을 재할당 할 수가 없으므로 제외했다.</li>
+</ul>
+<h4 id="실행결과-4"><a href="#실행결과-4" class="headerlink" title="실행결과"></a>실행결과</h4><pre class=" language-javascript"><code class="language-javascript">안녕하세요<span class="token punctuation">.</span>
+감사합니다<span class="token punctuation">.</span></code></pre>
+<h2 id="스코프-Scope"><a href="#스코프-Scope" class="headerlink" title="스코프(Scope)"></a>스코프(Scope)</h2><ul>
+<li>변수와 함수가 작용할 수 있는 유효범위</li>
+<li>유효범위를 기준으로 변수, 함수를 부를 수 있거나 없다.</li>
+</ul>
+<h3 id="전역-스코프-Global-scope-와-지역-스코프-Local-scope"><a href="#전역-스코프-Global-scope-와-지역-스코프-Local-scope" class="headerlink" title="전역 스코프(Global scope)와 지역 스코프(Local scope)"></a>전역 스코프(Global scope)와 지역 스코프(Local scope)</h3><ul>
+<li>스코프의 범위는 크게 전역과 지역 둘로 나뉜다.</li>
+<li>스코프가 없다면 여기저기서 내가 만든 변수를 변경하고 그에 따른 문제점도 생길 것 이다.</li>
+<li>전역 스코프와 지역 스코프의 범위를 아래 코드를 보고 이해하길 바란다.</li>
+</ul>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//전역스코프</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token string">'안녕하세요.'</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">//지역스코프</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  a <span class="token operator">=</span> <span class="token string">'감사합니다.'</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<h4 id="전역-스코프-Global-scope"><a href="#전역-스코프-Global-scope" class="headerlink" title="전역 스코프(Global scope)"></a>전역 스코프(Global scope)</h4><ul>
+<li>function(){} 안이 아닌 밖의 영역</li>
+<li>전역 스코프에서 변수를 선언하면 어디서든지 부를 수 있다.</li>
+<li>단 어디서든지 재선언, 재할당이 가능할 수 있다(let과 const같은 경우를 다름)</li>
+</ul>
+<h4 id="지역-스코프-Local-scope"><a href="#지역-스코프-Local-scope" class="headerlink" title="지역 스코프(Local scope)"></a>지역 스코프(Local scope)</h4><ul>
+<li>function(){} 안의 영역</li>
+<li>지역 내에서 선언한 변수는 지역내에서만 쓸 수 있다.</li>
+<li>함수 스코프(Function Scope), 블록 스코프(Block Scope) 두가지로 나눈다.</li>
+</ul>
+<h2 id="변수의-스코프"><a href="#변수의-스코프" class="headerlink" title="변수의 스코프"></a>변수의 스코프</h2><ul>
+<li>위에서 살짝 알아본 스코프를 변수에 곁을여 보기로 했다.</li>
+<li><code>var</code>, <code>let</code>, <code>const</code>의 스코프가 위에서 보면 다르게 되어있다.</li>
+<li>변수들은 스코프에 어떻게 작용하는지 확인해보자.</li>
+</ul>
+<h3 id="var-변수의-스코프"><a href="#var-변수의-스코프" class="headerlink" title="var 변수의 스코프"></a>var 변수의 스코프</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">'안녕하세요.'</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">'좋습니다.'</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token string">'싫습니다.'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 좋습니다.</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// Uncaught ReferenceError: b is not defined</span></code></pre>
+<ul>
+<li><code>var a</code>는 ‘안녕하세요.’ 에서 ‘좋습니다.’로 변경되었다.</li>
+<li><code>var b</code>는 함수 스코프 밖에서 <code>console.log(b)</code>로 불렀기에 작동하지 않는다.</li>
+</ul>
+<h3 id="let-변수의-스코프"><a href="#let-변수의-스코프" class="headerlink" title="let 변수의 스코프"></a>let 변수의 스코프</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token string">'안녕하세요.'</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token string">'좋습니다.'</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token string">'싫습니다.'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 안녕하세요.</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// Uncaught ReferenceError: b is not defined</span></code></pre>
+<ul>
+<li><code>let a</code>는 ‘안녕하세요.’가 출력되면서 <code>func()</code>밖의 <code>console.log(a)</code>가 ‘안녕하세요.’를 불러오는 것을 알 수 있다.</li>
+<li>당연히 <code>let b</code>는 함수안에 있어서 밖으로 못나온다.</li>
+<li><code>func()</code>안의 <code>let a</code>와 전역스코프의 <code>let a</code>는 다르다는 것을 알 수 있다.</li>
+<li>만약 같았더라면 <code>var</code>와 똑같은 결과값이 출력되야 했다.</li>
+<li><code>const</code>같은 경우 실험하기 애매해서 제외하였다.</li>
+</ul>
+<h2 id="뒷이야기"><a href="#뒷이야기" class="headerlink" title="뒷이야기"></a>뒷이야기</h2><p>평상시 javascript를 쓰면서 변수는 그냥 담고 빼고 ES6를 왜 만든거지라고 생각했다.<br>하지만 ES6는 좀더 생산성에 치우쳐서 만들어졌으며 좀더 분할되고 좀더 역할이 뚜렷하게 바뀐 것같다.<br>그러다 보니 그냥 아무생각없이 쓰기는 조금더 어려워진 것 같다.<br>가장 간단해서 의외로 간과한 정보를 본 것 같았다.</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <!-- <hr/> -->
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share" style="display:none">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2019/10/17/hamsuwa-hoiseuting/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/banner/javascript_cover.png" class="responsive-img" alt="함수와 호이스팅">
+                        
+                        <span class="card-title">함수와 호이스팅</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            그의 이름을 불러주기 전에는 그는 다만 하나의 코드에 지나지 않았다.
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            HOTDARI
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Current&nbsp;<i class="fa fa-dot-circle-o"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/10/03/byeonsuwa-seukopeu/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/banner/javascript_cover.png" class="responsive-img" alt="변수와 스코프">
+                        
+                        <span class="card-title">변수와 스코프</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            불러도 대답없는 너란 변수
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            HOTDARI
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer">
+        <div class="container row center-align">
+            <div class="col s12 m12 l12 copy-right">
+                &copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>
+                <a href="https://hexo.io/" target="_blank">Hexo</a>
+                <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>
+            </div>
+            <!-- <div class="col s12 m4 l4 social-link">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div> -->
+        </div>
+    </footer>
+    
+    <div class="progress-bar"></div>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Z90Z3NYEY"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-3Z90Z3NYEY');
+</script>
+
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+</body>
+
+</html>

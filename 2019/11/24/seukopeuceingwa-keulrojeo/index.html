@@ -1,0 +1,799 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="스코프체인과 클로저, 웹프론트엔드, 자바스크립트, 웹퍼블리셔, 블로그">
+    <meta name="description" content="스코프체인과 클로저들어가기전에우리는 자바스크립트의 실행문맥중 렉시컬환경(LexicalEnvironment)에 대해서 알고 들어가야 할 것 같다.그 이유는 자바스크립트의 규칙을 모르고는 너무 언어적감각으로 설명해야 할">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>스코프체인과 클로저 | HOTDARI BLOG</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="HOTDARI BLOG">
+                    
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/" class="waves-effect waves-light">
+						
+						<i class="fa fa-home"></i>
+						
+						<span>HOME</span>
+					</a>
+          
+        </li>
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/tags" class="waves-effect waves-light">
+						
+						<i class="fa fa-tags"></i>
+						
+						<span>Tags</span>
+					</a>
+          
+        </li>
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/archives" class="waves-effect waves-light">
+						
+						<i class="fa fa-archive"></i>
+						
+						<span>ARCHIVES</span>
+					</a>
+          
+        </li>
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/about" class="waves-effect waves-light">
+						
+						<i class="fa fa-user-circle-o"></i>
+						
+						<span>ABOUT</span>
+					</a>
+          
+        </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/favicon.png" class="logo-img responsive-img">
+        
+        <div class="logo-name">HOTDARI BLOG</div>
+        <div class="logo-desc">
+            
+            웹프론트엔드 엔지니어가 되기 위한 Study Blog
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+<li class="m-nav-item">
+			
+				<a href="/" class="waves-effect waves-light">
+					
+					<i class="fa fa-fw fa-home"></i>
+					
+					HOME
+				</a>
+          
+        </li>
+        
+<li class="m-nav-item">
+			
+				<a href="/tags" class="waves-effect waves-light">
+					
+					<i class="fa fa-fw fa-tags"></i>
+					
+					Tags
+				</a>
+          
+        </li>
+        
+<li class="m-nav-item">
+			
+				<a href="/archives" class="waves-effect waves-light">
+					
+					<i class="fa fa-fw fa-archive"></i>
+					
+					ARCHIVES
+				</a>
+          
+        </li>
+        
+<li class="m-nav-item">
+			
+				<a href="/about" class="waves-effect waves-light">
+					
+					<i class="fa fa-fw fa-user-circle-o"></i>
+					
+					ABOUT
+				</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/banner/javascript_cover.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        스코프체인과 클로저
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/javascript/">
+                                <span class="chip bg-color">javascript</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2019-11-24
+                </div>
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="스코프체인과-클로저"><a href="#스코프체인과-클로저" class="headerlink" title="스코프체인과 클로저"></a>스코프체인과 클로저</h1><h2 id="들어가기전에"><a href="#들어가기전에" class="headerlink" title="들어가기전에"></a>들어가기전에</h2><p>우리는 자바스크립트의 실행문맥중 렉시컬환경(LexicalEnvironment)에 대해서 알고 들어가야 할 것 같다.<br>그 이유는 자바스크립트의 규칙을 모르고는 너무 언어적감각으로 설명해야 할 것 같기 때문이다.</p>
+<h2 id="렉시컬환경-LexicalEnvironment"><a href="#렉시컬환경-LexicalEnvironment" class="headerlink" title="렉시컬환경(LexicalEnvironment)"></a>렉시컬환경(LexicalEnvironment)</h2><p>자바스크립트 엔진이 실행을 위해 모아논 자원환경이다.<br>key-value 형식으로 되어져있으며, 유효범위에 있는 변수와 함수, 객체들을 모아논 곳이라고 생각하면 쉬울 듯 하다.</p>
+<h3 id="렉시컬환경-구성"><a href="#렉시컬환경-구성" class="headerlink" title="렉시컬환경 구성"></a>렉시컬환경 구성</h3><ul>
+<li>환경레코드</li>
+<li>외부렉시컬환경</li>
+</ul>
+<p>자바스크립트는 이 렉시컬환경을 규칙으로 하고있다.<br>그로 인해서 렉시컬 스코프가 정해져있으며 동적스코프와 비교대상이 되어진다.</p>
+<h2 id="동적스코프와-렉시컬스코프"><a href="#동적스코프와-렉시컬스코프" class="headerlink" title="동적스코프와 렉시컬스코프"></a>동적스코프와 렉시컬스코프</h2><h3 id="동적스코프"><a href="#동적스코프" class="headerlink" title="동적스코프"></a>동적스코프</h3><p>함수 호출을 기준으로 스코프가 정해진다.</p>
+<h3 id="렉시컬스코프"><a href="#렉시컬스코프" class="headerlink" title="렉시컬스코프"></a>렉시컬스코프</h3><p>함수 선언을 기준으로 스코프가 정해진다.</p>
+<h3 id="동적스코프-렉시컬스코프-비교"><a href="#동적스코프-렉시컬스코프-비교" class="headerlink" title="동적스코프 렉시컬스코프 비교"></a>동적스코프 렉시컬스코프 비교</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token string">"global"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token string">"local"</span><span class="token punctuation">;</span>
+  <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="동적스코프-결과"><a href="#동적스코프-결과" class="headerlink" title="동적스코프 결과"></a>동적스코프 결과</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//local</span>
+<span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//global</span></code></pre>
+<p>동적스코프같은 경우 호출 기준으로 정해지기에<br>호출대로 하면 outer은 local을 가져오게 되며<br>inner은 global을 가져오게된다.<br>호출하는 순간 바라보는 변수가 정해져버리기 때문이다.</p>
+<h3 id="렉시컬스코프-결과"><a href="#렉시컬스코프-결과" class="headerlink" title="렉시컬스코프 결과"></a>렉시컬스코프 결과</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//global</span>
+<span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//global</span></code></pre>
+<p>렉시컬스코프는 선언 기준으로 정해지기에<br>선언을 하고 나서 이므로 호출하기 전부터 변수가 정해져버린다.<br>그래서 global이 두번다 결과값이 되는 것이다.</p>
+<p>자바스크립트는 렉시컬스코프 규칙을 따르기에 글로벌이 두번 나타날 것이다.</p>
+<h2 id="스코프체인"><a href="#스코프체인" class="headerlink" title="스코프체인"></a>스코프체인</h2><p>스코프체인은 스코프간의 연결이라는 개념으로 생각하는게 좋을 것 같다.</p>
+<h3 id="스코프체인을-나타내는-소스"><a href="#스코프체인을-나타내는-소스" class="headerlink" title="스코프체인을 나타내는 소스"></a>스코프체인을 나타내는 소스</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> 
+        <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token operator">+</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//3</span></code></pre>
+<p>위의 소스에서 <code>console.log(a+b)</code> 에서 <code>3</code> 이 나온다.<br><code>a</code> 는 inner에 없지만 <code>outer</code> 의 <code>a</code> 의 값을 가져와서 더한다.<br><code>inner</code> 의 스코프에서는 <code>a</code>는 없지만 <code>outer</code> 의 스코프에서 발견할 수 있다.<br>어떻게 이게 가능할까?<br>이것이 가능한 경우는 렉시컬스코프 환경 덕분이다.</p>
+<h3 id="렉시컬스코프-환경"><a href="#렉시컬스코프-환경" class="headerlink" title="렉시컬스코프 환경"></a>렉시컬스코프 환경</h3><p><img src="/images/20191124/img1.png" alt=""></p>
+<p>자바스크립트에서는 렉시컬스코프 규칙을 가지고 있으며<br>렉시컬스코프가 나타날 수 있는 것은 위의 이미지를 보면 조금이나마 이해에 도움이 될 것이다.<br>내부함수에서 찾을 수 없는 변수이면 상단의 외부함수로간다.</p>
+<h4 id="렉시컬-스코프-환경으로-표현"><a href="#렉시컬-스코프-환경으로-표현" class="headerlink" title="렉시컬 스코프 환경으로 표현"></a>렉시컬 스코프 환경으로 표현</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// global environment</span>
+environmentRecord<span class="token punctuation">{</span>
+    a <span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    innerFunc <span class="token punctuation">:</span> <span class="token keyword">function</span>
+    <span class="token comment" spellcheck="true">//outer environment reference:null</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token comment" spellcheck="true">// innerFunc environment</span>
+environmentRecord<span class="token punctuation">{</span>
+    b <span class="token punctuation">:</span> <span class="token number">2</span>
+    <span class="token comment" spellcheck="true">//outer environment reference: global environment</span>
+<span class="token punctuation">}</span></code></pre>
+<p>이런식으로 환경이 엮여서 체인을 이루는 모습에서 스코프체인이라 붙여졌다.</p>
+<h2 id="클로저"><a href="#클로저" class="headerlink" title="클로저"></a>클로저</h2><p>렉시컬환경을 유의하면서 클로져내용도 보면 이해하는데 도움이 많이 될 것 같다.</p>
+<h3 id="클로저란"><a href="#클로저란" class="headerlink" title="클로저란?"></a>클로저란?</h3><p>클로저에 대한 정의는 많은 것 같다.<br>외부함수와 내부함수로 이야기도 할 수 있지만<br>내가 본 클로저의 정의는 함수와 함수의 둘러싼 환경이 가장 클로저의 정의에 가까운 것 같다.</p>
+<p>함수와 그 안의 내부함수를 선언할시 결정되어진 함수의 스코프가 정해지면 바로 클로저가 되는 것이다.<br>그러면 외부함수, 내부함수선언하면 모두 클로저가 될까?<br>클로저가 된다는건 위에 말한 정의처럼 환경도 필요하다.</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> color <span class="token operator">=</span> ‘red’<span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>이러면 클로저일까?<br><strong>클로저가 아니다. 외부함수 안에 선언한 내부함수가 실행된 것일 뿐이다.</strong></p>
+<p>그럼 다른식으로 표현한 소스를 보자.</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> color <span class="token operator">=</span> ‘red’<span class="token punctuation">;</span>
+Function <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> color <span class="token operator">=</span> ‘blue’<span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> inner<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> closer <span class="token operator">=</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">closer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+<p>보기엔 그냥 위와 별반 차이없고 당연한 소스같다.<br>그치만 <code>return</code> 부분을 보게되면 조금 다르게 느껴질 것 같다.<br>실제로 <code>outer</code> 를 <code>closer에</code> 담아서 실행시키면<br><code>return</code> 안의 <code>inner이</code> 나온다. 결국 <code>inner</code> 을 부르는 나오는 것이 된다.<br>외부함수에서 내부함수를 실행하는 것이 아닌 <code>inner</code> 자체가 나오는 것이다.<br>그러면서 자연스레 <code>outer</code> 부분은 넘어가고 <code>inner</code> 이 튀어나오는 것 같지만 <code>inner</code>에서<br><code>color</code> 를 <code>blue</code> 를 가지고 온다.</p>
+<p>어떻게 이럴 수 있냐하면 위의 렉시컬스코프 환경을 생각해보면</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// global environment</span>
+environmentRecord<span class="token punctuation">{</span>
+    color <span class="token punctuation">:</span> red<span class="token punctuation">,</span>
+    outer <span class="token punctuation">:</span> <span class="token keyword">function</span>
+    <span class="token comment" spellcheck="true">//outer environment reference:null</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token comment" spellcheck="true">// outer environment</span>
+environmentRecord<span class="token punctuation">{</span>
+    color <span class="token punctuation">:</span> blue
+    inner <span class="token punctuation">:</span> <span class="token keyword">function</span>
+    <span class="token comment" spellcheck="true">//outer environment reference: global environment</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// inner environment</span>
+environmentRecord<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//outer environment reference: outer environment</span>
+<span class="token punctuation">}</span></code></pre>
+<p>선언을 하면 변수가 바로 정해지기에 <code>return</code>을 하더라도 <code>color</code>를 부르는 것이다.<br>가져오는게 아닌 선언하자마자 <code>color</code>는 <code>blue</code>인 것이다.<br>** 함수가 선언됐을 때의 환경을 보여주고 있다 **</p>
+<h3 id="유명한-반복문-클로저"><a href="#유명한-반복문-클로저" class="headerlink" title="유명한 반복문 클로저"></a>유명한 반복문 클로저</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> i<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">timer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> i<span class="token operator">*</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>가장 유명한 반목문 클로저이다.<br>이걸 만들때는 나는 i가 1,2,3,4,5,…,9 를 1초마다 한번씩 찍기를 원했지만 이상하게도<br>10이 9번 출력되었다.</p>
+<p>setTimeout이 실행되기전에 i는 10이 되어져버리고 10이 9번찍히는 것이다.</p>
+<p>이 문제를 해결하기 위해서 2가지 방법이 있다.<br>첫번째는 i가 i++가 될 때 하나씩 따로 저장해주는 방식<br>두번째는 ES6를 활용하여 블록스코프를 이용하는 방식이다.</p>
+<h3 id="첫번째-방식"><a href="#첫번째-방식" class="headerlink" title="첫번째 방식"></a>첫번째 방식</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> i<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">timer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span> j<span class="token operator">*</span><span class="token number">1000</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>새로운 스코프를 추가하여서 i를 j에 따로 담는 방식이다.</p>
+<h3 id="두번째-방식"><a href="#두번째-방식" class="headerlink" title="두번째 방식"></a>두번째 방식</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token string">'use strict'</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">timer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> i<span class="token operator">*</span><span class="token number">1000</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>블록 스코프를 이용하여서 해결하는 방법이다.</p>
+<h2 id="뒷이야기"><a href="#뒷이야기" class="headerlink" title="뒷이야기"></a>뒷이야기</h2><p>클로저를 보기전에 렉시컬환경과 콜스택에 대해서 먼저 해야했나 싶지만<br>일단 개념만이라도 인지하고 렉시컬과 콜스택에 대해서 보면 조금더 깊게 이해되고 그냥 아는 것에서 뇌에 스며드는 단계가 될 것 같다.</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <!-- <hr/> -->
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share" style="display:none">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2019/12/26/gaegcewa-saengseongja/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/banner/javascript_cover.png" class="responsive-img" alt="객체와 생성자">
+                        
+                        <span class="card-title">객체와 생성자</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            어떻게 객체를 생성할까?
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-26
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            HOTDARI
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/10/17/hamsuwa-hoiseuting/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/banner/javascript_cover.png" class="responsive-img" alt="함수와 호이스팅">
+                        
+                        <span class="card-title">함수와 호이스팅</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            그의 이름을 불러주기 전에는 그는 다만 하나의 코드에 지나지 않았다.
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            HOTDARI
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer">
+        <div class="container row center-align">
+            <div class="col s12 m12 l12 copy-right">
+                &copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>
+                <a href="https://hexo.io/" target="_blank">Hexo</a>
+                <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>
+            </div>
+            <!-- <div class="col s12 m4 l4 social-link">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div> -->
+        </div>
+    </footer>
+    
+    <div class="progress-bar"></div>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Z90Z3NYEY"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-3Z90Z3NYEY');
+</script>
+
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+</body>
+
+</html>

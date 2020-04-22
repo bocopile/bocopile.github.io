@@ -1,0 +1,878 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="CSS3 Flex Layout - 부모요소, 웹프론트엔드, 자바스크립트, 웹퍼블리셔, 블로그">
+    <meta name="description" content="CSS3 Flex Layout - 부모요소기존에는 HTML과 CSS만으로 웹사이트를 무리 없이 제작했다.하지만 스마트폰이라는 디바이스와 테블릿이 들어오면서 여러 디바이스를 대응하기 위해서 여러가지가 생겼다.이는 HT">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>CSS3 Flex Layout - 부모요소 | HOTDARI BLOG</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="HOTDARI BLOG">
+                    
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/" class="waves-effect waves-light">
+						
+						<i class="fa fa-home"></i>
+						
+						<span>HOME</span>
+					</a>
+          
+        </li>
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/tags" class="waves-effect waves-light">
+						
+						<i class="fa fa-tags"></i>
+						
+						<span>Tags</span>
+					</a>
+          
+        </li>
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/archives" class="waves-effect waves-light">
+						
+						<i class="fa fa-archive"></i>
+						
+						<span>ARCHIVES</span>
+					</a>
+          
+        </li>
+    
+    <li class="hide-on-med-and-down nav-item" >
+		
+					  <a href="/about" class="waves-effect waves-light">
+						
+						<i class="fa fa-user-circle-o"></i>
+						
+						<span>ABOUT</span>
+					</a>
+          
+        </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/favicon.png" class="logo-img responsive-img">
+        
+        <div class="logo-name">HOTDARI BLOG</div>
+        <div class="logo-desc">
+            
+            웹프론트엔드 엔지니어가 되기 위한 Study Blog
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+<li class="m-nav-item">
+			
+				<a href="/" class="waves-effect waves-light">
+					
+					<i class="fa fa-fw fa-home"></i>
+					
+					HOME
+				</a>
+          
+        </li>
+        
+<li class="m-nav-item">
+			
+				<a href="/tags" class="waves-effect waves-light">
+					
+					<i class="fa fa-fw fa-tags"></i>
+					
+					Tags
+				</a>
+          
+        </li>
+        
+<li class="m-nav-item">
+			
+				<a href="/archives" class="waves-effect waves-light">
+					
+					<i class="fa fa-fw fa-archive"></i>
+					
+					ARCHIVES
+				</a>
+          
+        </li>
+        
+<li class="m-nav-item">
+			
+				<a href="/about" class="waves-effect waves-light">
+					
+					<i class="fa fa-fw fa-user-circle-o"></i>
+					
+					ABOUT
+				</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/banner/css3_cover.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        CSS3 Flex Layout - 부모요소
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/css/">
+                                <span class="chip bg-color">css</span>
+                            </a>
+                        
+                            <a href="/tags/css3/">
+                                <span class="chip bg-color">css3</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2020-01-05
+                </div>
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="CSS3-Flex-Layout-부모요소"><a href="#CSS3-Flex-Layout-부모요소" class="headerlink" title="CSS3 Flex Layout - 부모요소"></a>CSS3 Flex Layout - 부모요소</h1><p>기존에는 HTML과 CSS만으로 웹사이트를 무리 없이 제작했다.<br>하지만 스마트폰이라는 디바이스와 테블릿이 들어오면서 여러 디바이스를 대응하기 위해서 여러가지가 생겼다.<br>이는 HTML, CSS뿐만 아니라 다른 개발언어에서도 보이는 현상이다.<br>기존의 HTML, CSS의 Inline, block에서 float, position Layout만으로 제작자는 갈증을 느꼈고 그로 인해서 생겨난 것이 Flex Layout 이다.</p>
+<p>** 이 내용을 보면서 폭이 좁아서 제대로 코드가 안보일 경우 오른쪽 하단의 아이콘을 누르면 TOC가 사라지면서 넓어질 것이다. **</p>
+<h2 id="Flex-란"><a href="#Flex-란" class="headerlink" title="Flex 란?"></a>Flex 란?</h2><p>기존의 Layout(float, position)을 조금 더 유연하게 하기 위해서 생긴 Layout 이다.<br>float 처럼 좌, 우로 띄워서 보내는 것이 아니며<br>position 처럼 좌표값과 층으로 나누는 것이 아니다.<br>flex 는 조금 더 유연하게 각각의 구역을 똑같이 나눈다거나 중심에 배치시키는 그런 것이 가능하다.<br>나는 텍스트로만 설명하는게 가장 싫기 때문에 눈으로 보여줄 것이다.</p>
+<h2 id="Flex-구조"><a href="#Flex-구조" class="headerlink" title="Flex 구조"></a>Flex 구조</h2><p>Flex는 부모요소와 자식요소가 있다.<br>부모요소는 <code>container</code> , 자식요소는 <code>item</code> 이라고 정의하며,<br>부모요소의 속성과 자식요소의 속성이 따로 있으며 그 속성을 보자면<br><code>container</code> : display, flex-flow, justify-content, align-content 등<br><code>item</code> : order, flex(flex-grow, flex-shink, flex-basis),align-self 등이 있다.</p>
+<h2 id="부모요소-container-속성-살펴보기"><a href="#부모요소-container-속성-살펴보기" class="headerlink" title="부모요소(container) 속성 살펴보기"></a>부모요소(container) 속성 살펴보기</h2><h3 id="display-flex-inline-flex"><a href="#display-flex-inline-flex" class="headerlink" title="display : flex, inline-flex"></a>display : flex, inline-flex</h3><h4 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h4><p>부모요소 자체가 flex속성을 가지면 block처럼 수직으로 레이아웃이 짜여지며<br>자식요소의 속성은 그대로다.</p>
+<iframe height="350" style="width: 100%;" scrolling="no" title="VwYMBVj" src="https://codepen.io/hotdari/embed/VwYMBVj?height=265&amp;theme-id=dark&amp;default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/hotdari/pen/VwYMBVj" target="_blank" rel="noopener">VwYMBVj</a> by hotdari
+  (<a href="https://codepen.io/hotdari" target="_blank" rel="noopener">@hotdari</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.
+</iframe>
+
+<h4 id="inline-flex"><a href="#inline-flex" class="headerlink" title="inline-flex"></a>inline-flex</h4><p>부모요소에 inline 속성이 들어간 flex 가 부여되어서 수직이 아닌 수평으로 가로로 되어진 형태가 보인다.<br>자식요소에는 영향이 없다.</p>
+<iframe height="350" style="width: 100%;" scrolling="no" title="dyPVjqM" src="https://codepen.io/hotdari/embed/dyPVjqM?height=265&amp;theme-id=dark&amp;default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/hotdari/pen/dyPVjqM" target="_blank" rel="noopener">dyPVjqM</a> by hotdari
+  (<a href="https://codepen.io/hotdari" target="_blank" rel="noopener">@hotdari</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.
+</iframe>
+
+<hr>
+<h3 id="flex-flow-flex-direction-flex-wrap"><a href="#flex-flow-flex-direction-flex-wrap" class="headerlink" title="flex-flow, flex-direction, flex-wrap"></a>flex-flow, flex-direction, flex-wrap</h3><p>flex-flow 는 flex-direction 과 flex-wrap의 단축 속성이며<br>예를 들면 background-image, background-repeat가 있다면<br>background 하나만으로 해결이 가능 할 것이다.<br>이것과 같이 flex-flow는 단축속성이며 쓰는 방법은 아래와 같다.</p>
+<pre class=" language-css"><code class="language-css"><span class="token selector">flex-flow</span><span class="token punctuation">{</span> flex-direction속성 flex-wrap속성 <span class="token punctuation">}</span></code></pre>
+<pre class=" language-css"><code class="language-css"><span class="token selector">flex-flow</span><span class="token punctuation">{</span>
+    row-reverse wrap
+<span class="token punctuation">}</span></code></pre>
+<p>구분은 스페이스바로 한칸 띄워주면 된다.</p>
+<table>
+<thead>
+<tr>
+<th>속성</th>
+<th>쓰임새</th>
+<th>기본값</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>row</td>
+<td>자식요소(item)들이 왼쪽에서 오른쪽으로 배치됩니다.</td>
+<td>row</td>
+</tr>
+<tr>
+<td>row-reverse</td>
+<td>자식요소(item)들이 오른쪽에서 왼쪽으로 배치됩니다.(row에서 반대)</td>
+<td></td>
+</tr>
+<tr>
+<td>column</td>
+<td>자식요소(item)들이 위에서 아래로 배치됩니다.</td>
+<td></td>
+</tr>
+<tr>
+<td>column-reverse</td>
+<td>자식요소(item)들이 아래에서 위로 배치됩니다.(column에서 반대)</td>
+<td></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>속성</th>
+<th>쓰임새</th>
+<th>기본값</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nowrap</td>
+<td>자식요소(item)들이 부모영역(container)를 벗어나도 한줄로 배치됩니다.</td>
+<td>nowrap</td>
+</tr>
+<tr>
+<td>wrap</td>
+<td>자식요소(item)들이 부모영역(container)틀안에서 여러행으로 배치됩니다.</td>
+<td></td>
+</tr>
+<tr>
+<td>wrap-reverse</td>
+<td>wrap의 반대로 배치됩니다.</td>
+<td></td>
+</tr>
+</tbody></table>
+<iframe height="350" style="width: 100%;" scrolling="no" title="oNgGMRL" src="https://codepen.io/hotdari/embed/oNgGMRL?height=265&amp;theme-id=dark&amp;default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/hotdari/pen/oNgGMRL" target="_blank" rel="noopener">oNgGMRL</a> by hotdari
+  (<a href="https://codepen.io/hotdari" target="_blank" rel="noopener">@hotdari</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.
+</iframe>
+
+<h3 id="주축-main-axis-과-교차축-cross-axis-시작점-main-start-와-끝점-main-end-개념"><a href="#주축-main-axis-과-교차축-cross-axis-시작점-main-start-와-끝점-main-end-개념" class="headerlink" title="주축(main-axis)과 교차축(cross-axis), 시작점(main-start)와 끝점(main-end) 개념"></a>주축(main-axis)과 교차축(cross-axis), 시작점(main-start)와 끝점(main-end) 개념</h3><p><img src="/images/20200105/flex-cross_img.png" alt=""></p>
+<p>위의 이미지를 보면 flex의 주축,교차축, 시작점, 끝점에 대한 개념과 더불어 교차축의 시작점과 끝점에 대해서 이해를 돕기 위해서 준비했다.<br>기본 뼈대는 주축(main-axis)과 교차축(cross-axis)이며 그 축은 <code>flex-direction</code> 이 <code>row</code> 인지 <code>column</code> 인지의 기준에 다라 바뀐다. <code>row</code> 이면 가로가 주축, <code>column</code> 이면 세로가 주축이 되어진다.<br>그렇게 주축과 교차축의 뼈대가 잡혔다면 이제 주축의 시작점과 끝점, 교차축의 시작점과 끝점을 알아야한다.<br>주축의 시작점과 끝점은 <code>reverse</code> 의 유무에 따라 바뀌며<br>교차축의 시작점과 끝점은 변경이 없다.</p>
+<h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><p>주축(main-axis)를 기준으로 정렬하는 방법</p>
+<table>
+<thead>
+<tr>
+<th>값</th>
+<th>내용</th>
+<th>기본값</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>flex-start</td>
+<td>자식요소(item)들이 주축의 시작점(main-start)기준으로 정렬</td>
+<td>flex-start</td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>자식요소(item)들이 주축의 끝점(main-end)기준으로 정렬</td>
+<td></td>
+</tr>
+<tr>
+<td>center</td>
+<td>자식요소(item)들이 가운데</td>
+<td></td>
+</tr>
+<tr>
+<td>space-between</td>
+<td>자식요소(item)들이 양끝점에 붙으며 그 이후 여백을 균등하게 정렬</td>
+<td></td>
+</tr>
+<tr>
+<td>space-around</td>
+<td>자식요소(item)들이 균등여백으로 정렬</td>
+<td></td>
+</tr>
+</tbody></table>
+<iframe height="350" style="width: 100%;" scrolling="no" title="OJPzJZb" src="https://codepen.io/hotdari/embed/OJPzJZb?height=265&amp;theme-id=dark&amp;default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/hotdari/pen/OJPzJZb" target="_blank" rel="noopener">OJPzJZb</a> by hotdari
+  (<a href="https://codepen.io/hotdari" target="_blank" rel="noopener">@hotdari</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.
+</iframe>
+
+<h3 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h3><p>교차축(cross-aixs)를 중심으로 정렬<br>** 주의할 점 : 자식요소(item)들이 두줄이상 배치되어야지 사용 가능 **<br>** 한줄만 배치일경우 align-items를 쓸 것 **</p>
+<table>
+<thead>
+<tr>
+<th>값</th>
+<th>내용</th>
+<th>기본값</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>stretch</td>
+<td>자식요소(item)들이 교차축의 빈공간을 채우기 위해 늘림(자식요소의 height가 없을경우)</td>
+<td>stretch</td>
+</tr>
+<tr>
+<td>flex-start</td>
+<td>자식요소(item)들이 교차축의 시작점(cross-start)기준으로 정렬</td>
+<td></td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>자식요소(item)들이 교차축의 끝점(cross-end)기준으로 정렬</td>
+<td></td>
+</tr>
+<tr>
+<td>center</td>
+<td>자식요소(item)들이 가운데</td>
+<td></td>
+</tr>
+<tr>
+<td>space-between</td>
+<td>자식요소(item)들이 교차축 양끝점에 붙으며 그 이후 여백을 균등하게 정렬</td>
+<td></td>
+</tr>
+<tr>
+<td>space-around</td>
+<td>자식요소(item)들이 균등여백으로 정렬</td>
+<td></td>
+</tr>
+</tbody></table>
+<iframe height="350" style="width: 100%;" scrolling="no" title="Exaoxpr" src="https://codepen.io/hotdari/embed/Exaoxpr?height=265&amp;theme-id=dark&amp;default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/hotdari/pen/Exaoxpr" target="_blank" rel="noopener">Exaoxpr</a> by hotdari
+  (<a href="https://codepen.io/hotdari" target="_blank" rel="noopener">@hotdari</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.
+</iframe>
+
+<h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><p>자식요소를 교차축(cross-aixs)를 중심으로 정렬<br>한줄을 기준으로 정렬된다.<br>** align-content가 더 우선순위이며, 같이 쓰게된다면 align-content:stretch가 아니면 작동하지 않는다. **</p>
+<table>
+<thead>
+<tr>
+<th>값</th>
+<th>내용</th>
+<th>기본값</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>stretch</td>
+<td>자식요소(item)들이 교차축의 빈공간을 채우기 위해 늘림(자식요소의 height가 없을경우)</td>
+<td>stretch</td>
+</tr>
+<tr>
+<td>flex-start</td>
+<td>자식요소(item)들이 교차축의 시작점(cross-start)기준으로 정렬</td>
+<td></td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>자식요소(item)들이 교차축의 끝점(cross-end)기준으로 정렬</td>
+<td></td>
+</tr>
+<tr>
+<td>center</td>
+<td>자식요소(item)들이 가운데</td>
+<td></td>
+</tr>
+<tr>
+<td>baseline</td>
+<td>자식요소(item)들이 문자선을 기준으로 정렬</td>
+<td></td>
+</tr>
+</tbody></table>
+<iframe height="350" style="width: 100%;" scrolling="no" title="mdypdzP" src="https://codepen.io/hotdari/embed/mdypdzP?height=265&amp;theme-id=dark&amp;default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/hotdari/pen/mdypdzP" target="_blank" rel="noopener">mdypdzP</a> by hotdari
+  (<a href="https://codepen.io/hotdari" target="_blank" rel="noopener">@hotdari</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.
+</iframe>
+
+<h2 id="뒷이야기"><a href="#뒷이야기" class="headerlink" title="뒷이야기"></a>뒷이야기</h2><p>아직 우리나라는 IE때문에 쉽사리 flex를 쓰긴 힘들지만 모바일이나 다양한 디바이스에 대응되기 위해서 그리고 텍스트 배열처럼 쉽게 배열을 할 수 있어서 좋은 것 같다. 다음에는 자식요소에 대해서 다뤄볼 예정이다.</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <!-- <hr/> -->
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share" style="display:none">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2020/01/19/flex-jasigyoso/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/banner/css3_cover.png" class="responsive-img" alt="CSS3 Flex Layout - 자식요소">
+                        
+                        <span class="card-title">CSS3 Flex Layout - 자식요소</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Flex했지뭐야~
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            HOTDARI
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/css/">
+                        <span class="chip bg-color">css</span>
+                    </a>
+                    
+                    <a href="/tags/css3/">
+                        <span class="chip bg-color">css3</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/01/02/peurototaib/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/banner/javascript_cover.png" class="responsive-img" alt="프로토타입">
+                        
+                        <span class="card-title">프로토타입</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            처음 본 너의 모습
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            HOTDARI
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer">
+        <div class="container row center-align">
+            <div class="col s12 m12 l12 copy-right">
+                &copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>
+                <a href="https://hexo.io/" target="_blank">Hexo</a>
+                <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>
+            </div>
+            <!-- <div class="col s12 m4 l4 social-link">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div> -->
+        </div>
+    </footer>
+    
+    <div class="progress-bar"></div>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Z90Z3NYEY"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-3Z90Z3NYEY');
+</script>
+
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+</body>
+
+</html>
