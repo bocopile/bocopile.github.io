@@ -12,7 +12,7 @@ email: gjrjr4545@gmail.com
 website: velog.io/@gjrjr4545/posts
 
 # Dark Mode (true/false/never)
-darkmode: false
+darkmode: never
 
 # Social links
 #twitter_username: facespics
@@ -90,7 +90,7 @@ content:
           #   icon: fab fa-github
           #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
         quote: >
-          <mark>JAVA</mark> <mark>Node</mark> <mark>shell</mark> <mark>Go</mark> <mark>Docker</mark> <mark> CI/CD </mark> <mark>Github Action</mark> <mark>Terraform</mark> <mark>Mysql</mark>
+         <mark>JAVA</mark> <mark>Node</mark> <mark>shell</mark> <mark>Go</mark> <mark>Docker</mark> <mark> CI/CD </mark> <mark>Github Action</mark> <mark>Terraform</mark> <mark>Mysql</mark>
         description: | # this will include new lines to allow paragraphs
          <mark> IMQA 모바일 모니터링 솔루션 DevOps 파트 담당자 </mark>
           - 2022.02 ~ 현재
@@ -217,10 +217,7 @@ content:
         title: 경기과학기술대학교
         caption: 2017.03 - 2019.02
         sub_title: 신재생에너지학과
-        quote: >
-          풍력, 태양광에 대한 설계 및 역학 교육
-        description: | # this will include new lines to allow paragraphs
-          - 설계, 유체역학, 열역학 교육
+
 
 
 # Footer
