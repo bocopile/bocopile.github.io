@@ -93,7 +93,7 @@ content:
          <mark>JAVA</mark> <mark>Node</mark> <mark>shell</mark> <mark>Go</mark> <mark>Docker</mark> <mark> CI/CD </mark> <mark>Github Action</mark> <mark>Terraform</mark> <mark>Mysql</mark>
         description: | # this will include new lines to allow paragraphs
          <mark> IMQA 모바일 모니터링 솔루션 DevOps 파트 담당자 </mark>
-          - 2022.02 ~ 현재
+          - 2021.02 ~ 현재
           
          [saas]
           - Node 18 NCC 배포 Jenkins 기반 CI/CD 파이프라인 구축
