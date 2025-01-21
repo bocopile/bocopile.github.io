@@ -53,79 +53,39 @@ about_content: | # this will include new lines to allow paragraphs
 
 
 content:
-  - title: Skills # Title for the section
-    layout: list # Type of content section (list/text)
-    content:
-      - layout: left
-        title: Backend
-        description: | # this will include new lines to allow paragraphs
-          - Java, NodeJS
-          - Spring Boot, Spring MVC, Spring Security, Spring Data JPA
-          - Jest, Junit5
-          - Gradle, Maven
-          - IntelliJ, WebStorm, Visual Studio Code
-          
-
-      - layout: left
-        title: DevOps
-        description: | # this will include new lines to allow paragraphs
-          - MySQL, MariaDB
-          - Jenkins, Github Action
-          - Terraform, ansible
-          - Nginx, HaProxy, RabbitMQ
-          - Linux Centos
-
-
-
   - title: Experience # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: left
         title: 어니컴 주식회사
-        link: imqa.io
+        link: https://imqa.io
         sub_title: DevOps 엔지니어
-        caption: 2022.02 ~
-        # link_text: Project Website
+        caption: 2022.02 ~ 2024.10
+        link_text: Project Website
           # - title:  Github page for project (eg. sproogen/modern-resume-theme)
           #   icon: fab fa-github
           #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
-        quote: >
-         <mark>JAVA</mark> <mark>Node</mark> <mark>shell</mark> <mark>Go</mark> <mark>Docker</mark> <mark> CI/CD </mark> <mark>Github Action</mark> <mark>Terraform</mark> <mark>Mysql</mark>
+        quote:
         description: | # this will include new lines to allow paragraphs
-         <mark> IMQA 모바일 모니터링 솔루션 DevOps 파트 담당자 </mark>
-          - 2021.02 ~ 2024.09
-          
-         [공통]
+         <mark> IMQA 모바일 모니터링 솔루션 서비스 </mark>
+           - Azure 서비스 관리
+           - 통합 모니터링 시스템 구축 (Node Exportor, Prometheus, Loki, Grafana 등)
+           - Azure 비용 절감 작업 진행
+           - 은행, 보험 등 대형 고객사 트래픽 기반 서버 아키텍처 설계 및 시스템 구축
+           - Node 18 NCC 배포 Jenkins 기반 CI/CD 파이프라인 구축
+           - IMQA 솔루션 Auto Recovery 시스템 구축
+           - 시스템 별 장애 대응 방안, 프로세스 문서화 작업
+           - DB 배포 및 검증 자동화 솔루션 구축
            - SQL 배포 및 검증 자동화 기능 개발
-           - Jmeter 기반 부하 테스트 진행
-           - 인프라 트러블 슈팅 진행 (Redis, Mysql, RabbitMQ, pm2, HAProxy 등)
-           - SaaS 및 On-Premise 트래픽 기반 시스템 아키텍처 및 운영 정책 수립
+           - IMQA 솔루션 일괄 설치 자동화 서비스 개발
+           
+          <mark> AI 융합 불법복제품 판독 솔루션 서비스 </mark>
+          - Node 기반 물품 불법복제품 판독 솔루션 아키텍처 및 인프라 구축
+          - 물품 불법복제판독 비교 비지니스 API 작업 진행
           
-         [SaaS]
-          - Node 18 NCC 배포 Jenkins 기반 CI/CD 파이프라인 구축
-          - Grafana, Opensearch 기반 통합 모니터링 시스템 구축
-          - Azure SaaS 운영 담당
-          
-         [On-Premise]
-          - 은행, 보험, 증권사등 대형 고객사 트래픽 기반 서버 아키텍처 설계
-          - Shell 기반 On-Premise 일괄 설치 스크립트 구축
-          - On-Premise 고객사 서버 구축 작업
-          - Shooting 가이드 및 대응 프로세스 구축
-          - 고객사 정기 및 핫픽스 배포 담당
-          - 시스템 Health Check 기능 구축
-          
-
-          
-          <mark> AI 융합 불법복제품 판독 시스템 메인 담당자 </mark>
-          - 기간 : 2021.07 ~ 2022.12
-          - Node 12 기반 물품 비교 검증 솔루션 구축
-          - 관세청 물품 비교 검증 메인 담당
-          
-          <mark> AI 안면인식 과제 메인 담당자 </mark>
-          - 기간 : 2021.03 ~ 2022.12
-          - Node 12 기반 안면인식 비교 검증 솔루션 구축
-          - RTMP 기반 안면인식 영상 라이브 스트리밍 시스템 구축
-          - 안면인식 검증 메인 담당
+          <mark> AI 안면인식 판독 솔루션 서비스 </mark>
+          - Node 기반 안면인식 판독 솔루션 아키텍처 및 인프라 구축
+          - RTMP 영상 라이브 스트리밍, 영상/사진 비교 비지니스 API 작업 진행
 
       - layout: left
         title: 주식회사 에스엔비플러스
@@ -135,42 +95,44 @@ content:
           # - title:  Github page for project (eg. sproogen/modern-resume-theme)
           #   icon: fab fa-github
         #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
-        quote: >
-          <mark>JAVA</mark> <mark>spring</mark> <mark>python</mark> <mark>Mysql</mark>
+        quote:
         description: | # this will include new lines to allow paragraphs
-          <mark> 가치삽시다/동반성장몰 소상공인 소셜 커머스 사업 리뉴얼 </mark>
-           - 2020.09 ~ 2021.02
-           - 핫딜 상품, 베스트, 공동구매 API 개발
+          <mark> 동반성장몰 소상공인 소셜커머스 시스템 리뉴얼 </mark>
+           - 쿠폰, 핫딜 상품, 공동구매, 라이브커머스 연동 비지니스 API 개발
            - 외부 NetFUNNEL 적용 작업    
-           - jmeter, scouter 기반 부하 테스트 진행
+           - Jmeter, Scouter 기반 부하 테스트 진행
           
           <mark> 국립국어원 한국어교원 자격심사 시스템 </mark>
-          - 2019.04 ~ 2020.09
-          - 유지보수 업무 및 고객응대
+          - 메인 담당자로서 시스템 유지보수 및 고객응대
           - 전자정부기반 CMS 보안 강화
           - Electron 기반 개인정보 문서스캔 시스템 솔루션 개발
           
-          <mark> 검정고시 자격심사 고도화 사업 </mark>
-          - 2019.10 ~ 2020.03
-          - 자격심사 사이트 메인 API 개발자
-          - LMS 기능 구축
-          - MSA 기반으로 된 보안작업을 통한  PMS 연동 작업
-          
-          <mark> 사내 내부 인트라넷 구축
-          - 2019.08 ~ 2020.06
-          - Spring Boot 기반 사내 내부 인트라넷 구축
-          - 비지니스 컴포넌트 설계 및 개발 진행
-          - MSA 기반 spring cloud 구축 진행
-          
-          <mark> 국립국어원 지역어 관련 리뉴얼 </mark>
+          <mark> 국립국어원 지역어 시스템 </mark>
           - 유지보수 담당자, 관리자 및 사용자에 대한 유지보수 작업 진행
           - 네이버 지도 엔진 기반 지역어 맵서비스 구축
           - Node, Selenium 기반으로 지도 이미지 변환 자동화 구축
+          
+          <mark> 검정고시 자격심사 고도화 사업 </mark>
+          - 메인 담당자로서 유지보수 업무 및 고객 응대
+          - 검정고시 내부 LMS 기능 구축
+          - MSA 기반으로 된 보안작업을 통한 PMS 연동 작업
+          
+          <mark> 사내 내부 인트라넷 구축
+          - Spring Boot/Vue 기반 사내 내부 인트라넷 구축
+          - 회원/결제문서/사내커뮤니케이션/사업관리와 같은 비즈니스 컴포넌트 설계 및 개발
+          - Docker를 이용하여 배포 자동화 구축
+          - MSA 기반 Spring Cloud 적용
           
           <mark> KAIT 시스템 유지보수 작업 </mark>
           - 한국정보통신진흥협회 정보통신기술자격검증 시스템 개발 및 유지보수 작업
           - C++ 기반 답안전송시스템(MFC) 유지보수 작업
           - Spring 기반 시험접수 시스템 구축 작업
+          
+          <mark> 기타 </mark>
+          - Jira를 이용한 스크럼 진행
+          - Confluence를 이용한 위키 문화
+          - Bitburket을 이용한 버전관리 적용
+          - 매달 내부 기술 세미나 개최 (Docker, HeadlessBrowser, Scrum 등 업무와 관련된 컨퍼런스 진행)
 
       - layout: left
         title: (주)더인
@@ -180,26 +142,73 @@ content:
           # - title:  Github page for project (eg. sproogen/modern-resume-theme)
         #   icon: fab fa-github
         #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
-        quote: >
-          <mark>JAVA</mark> <mark>spring</mark> <mark>python</mark> <mark>Mysql</mark>
+        quote:
         description: | # this will include new lines to allow paragraphs
-          <mark> 코원 에너지 서비스(SK E&S) 시스템 리뉴얼 </mark>
-           - 2018.02 - 2018.05
+          <mark> 코원 에너지 서비스 리뉴얼 </mark>
            - Spring 기반 예약, 기사매칭, 요금부과 관련 비지니스 컴포넌트 개발
-           - 리뉴얼 관련 전체적 부하 테스트 작업
+           - Jmeter 기반 부하 테스트 작업
           
-          <mark> nailook - 네일아트 플랫폼 </mark>
-          - 2017.09 ~ 2018.02
-          - Spirng, ionic 기반 네일아트 시스템 백엔드 개발
+          <mark> nailook - 네일아트 매칭 플랫폼 </mark>
+          - Spring 기반 네일아트 매칭 플랫폼 개발
           - 네일아트 갤러리 및 예약 관련 기능 비지니스 API 작업
           
           <mark> Dr.physio - 의료 정보 솔루션  </mark>
           - 2017.02 ~ 2017.08
-          - Spring, Mysql 의료 정보 솔루션 구축
-          - 고객 물리치료 관리 솔루션 구축 작업
-          - 내부 관리자를 위한 CMS 구축 작업
-        
-         
+          - Spring, Mysql 의료 정보 솔루션 개발
+          - 고객 물리치료, 환자 관리 비지니스 API 작업 진행
+          - 내부 관리자 전용 CMS API 작업 진행
+
+  - title: 역량 # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: 내부 개발 파티 및 개발 조직 문화 개선 참가
+        caption:
+        sub_title:
+        description: | # this will include new lines to allow paragraphs
+          - (어니컴) 2023 IMDev 컨퍼런스 발표 - <a href="https://www.youtube.com/watch?v=MdrOjh_aIxw"> IMQA Container 환경 서비스 제공 적용기 </a>
+          - (어니컴) IMQA Blog 포스팅 진행
+          - (SnB플러스) Jira를 이용한 스크럼 진행
+          - (SnB플러스) Confluence를 이용한 위키 문화
+          - (SnB플러스) Bitburket을 이용한 버전관리 적용
+          - (SnB플러스) 매달 내부 기술 세미나 참가 (Docker, HeadlessBrowser, Scrum 등 업무와 관련된 컨퍼런스 진행)
+
+      - layout: left
+        title: Devops
+        caption:
+        sub_title:
+        description: | # this will include new lines to allow paragraphs
+          - (어니컴) 고객사별 트래픽 대비 아키텍처 설계 및 시스템 구축
+          - (어니컴) Node 기반 프로젝트 경량화 및 Jenkins 기반 CI/CD 파이프라인 구축
+          - (어니컴) 통합 모니터링 시스템 구축 (Node Exportor, Prometheus, Loki, Grafana 등)
+          - (어니컴) DB 배포 및 검증 자동화 시스템 구축
+
+  - title: Skill # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: Backend
+        sub_title: (Java 프로젝트 80%, Node 프로젝트 20%)
+        description: | # this will include new lines to allow paragraphs
+          - Java, Spring Boot, Spring MVC, Spring Security, Spring Data JPA
+          - Nodejs, Express, TypeORM, Jest
+
+      - layout: left
+        title: DevOps
+        description: | # this will include new lines to allow paragraphs
+          - Jenkins, Github Action
+          - Nginx, HaProxy, RabbitMQ, Redis
+          - AKS, Linux
+          - Prometheus, Grafana, Loki 
+
+  - title: 대외활동 # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: ImDev 컨퍼런스
+        description: | # this will include new lines to allow paragraphs
+          - 2023 ImDev 컨퍼런스 참가
+          - <a href="https://conference.imqa.io/"> 2023 IMDev 스피커 - IMQA Container 환경 서비스 제공 적응기 </a>
 
   - title: Education # Title for the section
     layout: list # Type of content section (list/text)
@@ -208,8 +217,6 @@ content:
         title: 한국방송통신대학교
         caption: 2017.03 - 2019.02
         sub_title: 컴퓨터과학과 (졸업)
-        quote: >
-          컴퓨터 공학 교육
         description: | # this will include new lines to allow paragraphs
           - JAVA, 자료구조,알고리즘 운영 체제, 네트워크, 인공지능 교육
           - 졸업 논문 : 전자정부프레임워크에 대한 고찰
