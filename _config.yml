@@ -48,9 +48,12 @@ github_username:  bocopile
 # about_title: About Me
 about_profile_image: images/profile.png
 about_content: | # this will include new lines to allow paragraphs
-  퍼블릭 클라우드 및 온프레미스 환경에서 안정적인 서비스 제공과 효율적인 운영을 위한 CI/CD 파이프라인,
-  온프레미스 설치 간편화, 모니터링 시스템 구축, 트래픽 기반 아키텍처 설계 및 자동화 솔루션 경험이 있는 8년차 엔지니어 입니다.
-
+  인프라 아키텍처 설계 및 시스템 자동화를 좋아하는 8년차 개발자 신복호 입니다.
+  
+  퍼블릭 클라우드 및 온프레미스 환경에서 CI/CD 파이프라인, 모니터링 시스템, 트래픽 기반 아키텍처 자동화를 구축해왔습니다. 
+  Kubernetes, Jenkins, Prometheus, HAProxy 등을 활용해 대형 고객사의 인프라 운영 자동화를 수행하며, 안정성과 비용 최적화를 중점적으로 고려하였습니다.
+  
+  또한, CI/CD 개선, 장애 대응 프로세스 구축, 통합 모니터링 도입 등 DevOps 문화 확산과 개발 효율성 향상에 기여해왔습니다.
 
 content:
   - title: Experience # Title for the section
@@ -68,22 +71,30 @@ content:
         quote:
         description: | # this will include new lines to allow paragraphs
          <mark> IMQA 모바일 모니터링 솔루션 서비스 </mark>
-           - Azure 서비스 관리
-           - 통합 모니터링 시스템 구축 (<a href="https://velog.io/@gjrjr4545/1.1.-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C-%EA%B5%AC%EC%B6%95-%EA%B0%9C%EC%9A%94">Node Exportor, Prometheus, Grafana </a> , Loki 등)
-           - Azure 비용 절감 작업 진행 (기존 대비 60% 절감)
-           - 은행, 보험 등 대형 고객사 트래픽 기반 서버 아키텍처 설계 및 시스템 구축
-           - Node 18 NCC 배포 Jenkins 기반 CI/CD 파이프라인 구축
-           - IMQA 솔루션 Auto Recovery 시스템 구축
-           - 시스템 별 장애 대응 방안, 프로세스 문서화 작업
-           - DB 배포 및 검증 자동화 솔루션 구축
-           - SQL 배포 및 검증 자동화 기능 개발
-           - IMQA 솔루션 일괄 설치 자동화 서비스 개발
+          
+          [아키텍처 설계 및 인프라 구축]
+           - 대형 고객사(은행, 보험) 대상 최대 일일 100만 트래픽 처리 아키텍처 설계 및 구축
+           - GSIP 국가 과제 목적 아키텍처 설계 및 인프라 구축
+           - CSAP 검증용 네이터 블라우드 기반 k8s 아키텍처 설계 및 인프라 구축
+         
+          [최적화/자동화]
+           - Azure 기반 서비스 데이터 필터링 및 고객사별 Region 분리하여 인프라 구축(기존 대비 60% 인프라 비용 절감)
+           - Node 기반 프로젝트 경량화 및 Jenkins CI/CD 구축(기존 대비 배포 소요시간 50% 단축)
+           - Shell 기반 IMQA 자동 복구 시스템 구축
+           - Node 기반 DB 배포/검증 자동화 시스템 구축
+           - IMQA 서비스 일괄 설치/배포 자동화 시스템 구축
+          
+          [모니터링 시스템 구축]
+           - 퍼블릭 클라우드 통합 <a href = "https://velog.io/@gjrjr4545/monitoring-0" >모니터링 시스템</a>(Node Exporter, Prometheus, Loki, Grafana) 구축
            
-          <mark> AI 융합 불법복제품 판독 솔루션 서비스 </mark>
+          [운영 정책 수립]
+           - 퍼블릭 클라우드 및 온프레미스 시스템 별 장애 대응 방안 및 표준 운영 프로세스 수립
+           
+         <mark> AI 융합 불법복제품 판독 솔루션 서비스 </mark>
           - Node 기반 물품 불법복제품 판독 솔루션 아키텍처 및 인프라 구축
           - 물품 불법복제판독 비교 비지니스 API 작업 진행
           
-          <mark> AI 안면인식 판독 솔루션 서비스 </mark>
+         <mark> AI 안면인식 판독 솔루션 서비스 </mark>
           - Node 기반 안면인식 판독 솔루션 아키텍처 및 인프라 구축
           - RTMP 영상 라이브 스트리밍, 영상/사진 비교 비지니스 API 작업 진행
 
